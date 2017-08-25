@@ -1,0 +1,312 @@
+@base: #f938ab;
+@orange-color : #EF4F00;
+@gray-color :  #e4e3e3;
+@gray-color-lower: #f5f5f5;
+@dack-blue :#0B1962;
+body  {
+  background: #fff;
+}
+a {
+  color:@orange-color;
+  text-decoration:none;
+}
+a:hover, a:focus {
+  text-decoration:none;
+}
+@font-face {
+  font-family: 'BebasNeueRegular';
+  src: url('../fonts/BebasNeue-webfont.eot');
+  src: url('../fonts/BebasNeue-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/BebasNeue-webfont.woff') format('woff'), url('../fonts/BebasNeue-webfont.ttf') format('truetype'), url('../fonts/BebasNeue-webfont.svg#BebasNeueRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.gray-color {
+  color: @gray-color;
+}
+.orange-color {
+  color: @orange-color;
+}
+.blue-color {
+  color: @dack-blue;
+}
+.font-bold {
+  font-weight: 600;
+}
+.padding-15 {
+  padding: 15px;
+}
+.margin-top10 {
+  margin-top: 10px;
+}
+.text-right {
+  text-align: right;
+}
+.top-block-all {
+  height: 43px;
+  background-color: white;
+  padding-left: 15px;
+  font-size: 16px;
+  display: table;
+  width: 100%;
+  border-bottom: 2px solid @orange-color;
+  .icon {
+    display: table-cell;
+    vertical-align: middle;
+    width: 5%;
+    text-align: center;
+    padding-right: 15px;
+    border-right: 2px solid @gray-color;
+    .btn-default {
+        background: #EF4F00;
+        color: #fff;
+        font-weight: bold;
+      }
+    .select-year {
+      li {
+        border-left: 1px solid #dddddd;
+        border-left: 1px solid #dddddd;
+        margin-left: 20px;
+        padding: 10px 0px;
+        i {
+          margin-left: -26px;
+          padding-right: 10px;
+          color: #EF4F00;
+        }
+      }
+    }
+  }
+  .title {
+    text-align: left;
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 10px;
+  }
+}
+.block-body {
+  background: #ffffff;
+  .items-event {
+    .item-thumbnail {
+      width: 200px;
+      height: 100px;
+      display: block;
+    }
+    .item-event {
+      padding-top: 10px;
+      padding-right: 10px;
+      border-bottom: 1px solid @gray-color;
+      padding-bottom: 5px;
+    }
+  }
+}
+.banner-top {
+   min-height: 100px;
+  background: #ffffff;
+  .media-left {
+    img {
+      height: 100px;
+    }
+  }
+}
+.menu-top {
+  margin-bottom: 15px;
+  ul {
+    margin: 0px;
+    padding: 0;
+    background: @dack-blue;
+    font-size: 0px;
+    li {
+      list-style: none;
+      display: inline-block;
+      height: 45px;
+      line-height: 45px;
+      padding: 0 10px;
+      border-right: 1px solid rgba(168, 161, 157, 0.36);
+      a{
+        text-decoration: none;
+        font-size: 14px;
+      }
+    }
+    li:hover, li:focus {
+      background: #EF4F00;
+      a{
+        color: @dack-blue;
+      }
+    }
+  }
+}
+.lns-footer {
+  background: #ffffff;
+  margin-top: 10px;
+}
+.main-page-content {
+  min-height: 500px;
+  .home-main-block {
+    margin-bottom: 10px;
+  }
+}
+.banner-top{
+
+}
+.padding-left0 {
+  padding-left: 0px !important;
+}
+.padding0 {
+  padding: 0px;
+}
+.icon-list-style {
+  font-size: 9px;
+  padding-right: 10px;
+}
+.display-table {
+  //display: table-cell;
+  a, span, i {
+    vertical-align: middle;
+  }
+}
+.left-menu-admin {
+    .panel-group .panel+.panel {
+        margin-top: 0px;
+    }
+    .panel {
+      border-radius: 0px;
+    }
+    .panel-body {
+        padding: 0px;
+         ul {
+              margin-top: 0;
+              margin-bottom: 0px;
+        }
+        .list-group {
+          padding-left: 0;
+          .list-group-item:first-child {
+              border-top-left-radius: 0px; 
+              border-top-right-radius: 0px;
+            }
+          .list-group-item:last-child {
+              margin-bottom: 0;
+              border-bottom-right-radius: 0px; 
+              border-bottom-left-radius: 0px; 
+              border-bottom: none;
+            }
+          .list-group-item {
+              border-left: none;
+              border-right: none;
+              i {
+                font-size: 9px;
+                color: @gray-color;
+                padding-right: 10px;
+              }
+            }
+        }
+    }
+}
+.event-form-reg {
+  fieldset {
+    border: 1px solid @gray-color;
+    padding: 10px;
+  }
+  legend {
+    width: auto;
+    border-bottom: none;
+  }
+}
+.input-date-event {
+  .input-date {
+    ul{
+      width: 100%;
+      table {
+        width: 100%;
+      }
+    }
+  }
+}
+.admin-right-box {
+  border: 1px solid @gray-color;
+  padding: 15px;
+  padding-top: 0px;
+  .admin-right-box-title {
+    background-color: @gray-color-lower;
+    padding: 10px;
+  }
+}
+.image-feature-content {
+  a img {
+    width: 250px;
+    height: auto;
+  }
+}
+
+// css for pz editor
+body {
+  background: #f1f1f1;
+}
+.doc-title-header {
+  background-color: #0072BC;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 150;
+  height: 50px;
+  .title {
+    font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    height: 100%;
+    input {
+      margin-top:10px;
+      padding: 0px 10px;
+    }
+  }
+}
+.doc-toolbar {
+  background-color: white;
+  text-align: center;
+  width: 100%;
+  box-shadow: 0 0 10px #c7c7c7;
+  position: fixed;
+  top:50px;
+  z-index: 100;
+  padding-left: 10px;
+  height: 50px;
+  padding-top:5px;
+  .select-group {
+    display: inline-block;
+    max-width: 150px;
+  }
+  .devider {
+    width: 1px;
+    height: 35px;
+    margin: 0 5px;
+    background-color: #E0E0E0;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .font-style-gr {
+    max-width: 200px;
+    .btn {
+      border: none;
+      outline: none;
+      padding: 5px 10px;
+      &:active {
+        background: #e6e6e6;
+      }
+    }
+  }
+}
+.main-editor {
+  padding-top: 150px;
+}
+#pzCanvasContainer {
+    background-color: #FFF;
+    box-shadow: 0px 4px 14px -4px #919191;
+    border: 1px solid #E0E0E0;
+    min-width: 320px;
+    min-height: 297mm;
+    padding: 1.5cm 2cm 1.5cm 2cm;
+    >.wave-editor-on {
+      outline: none;
+    }
+}

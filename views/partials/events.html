@@ -1,0 +1,40 @@
+<div class="main-event-home" class="home-main-block" ng-controller="eventsCtrl">
+    <div class="top-block-all">
+        <div class="icon">
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+                     Year
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu select-year" role="menu" aria-labelledby="dropdownMenu1">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="fa fa-clock-o"></i> 2015</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="fa fa-clock-o"></i> 2014</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="fa fa-clock-o"></i> 2013</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="fa fa-clock-o"></i> 2012</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="title">
+           Events
+        </div>
+    </div>
+    <div class="block-body">
+        <div class="items-event">
+            <div class="media item-event" ng-repeat="event in listEvents | limitTo:10">
+                <div class="media-left">
+                    <a class="item-thumbnail" href="eventdetail/{{event.ID}}">
+                        <img class="media-object img-responsive" src="http://lorempixel.com/400/200/?{{event.ID}}" alt="...">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading"><a href="eventdetail/{{event.ID}}">{{event.Title}}</a></h4>
+                    <p>
+                        {{event.Description}}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,17 @@
+﻿<div class="upload-image">
+    <a class="avatar-intruction"
+       href="javascript:void(0);" onclick="$('#fileUpdateAvata').click();">
+        <i class="fa fa-upload"></i> <span class="text">
+            Upload
+            picture
+        </span>
+    </a>
+    <div class="image-feature-content">
+        <a href="#" class="openUpload">
+            <img src="{{lnsAttachment.URL}}" class="img-responsive" />
+        </a>
+         <input type="file" id="fileUpdateAvata"
+       style="display: none;" ng-file-select nv-file-select="" uploader="uploader"/>
+        <div class=""></div>
+    </div>
+</div>

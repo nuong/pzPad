@@ -1,0 +1,29 @@
+<div class="main-event-home" class="home-main-block" ng-controller="newEventCtrl">
+    <div class="top-block-all">
+        <div class="icon">
+            <i class="fa fa-star-o"></i>
+        </div>
+        <div class="title">
+           New Events
+        </div>
+    </div>
+    <div class="block-body">
+        <div class="items-event">
+            <div class="media item-event" ng-repeat="i in listEvents">
+                <div class="media-left">
+                    <a class="item-thumbnail" href="#">
+                        <img class="media-object img-responsive" src="http://lorempixel.com/400/200/?{{i}}" alt="...">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading">Event Title</h4>
+                    <p>
+                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

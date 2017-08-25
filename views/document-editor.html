@@ -1,0 +1,38 @@
+<div class="pz-document-editor"> 
+    <div class="doc-title-header">
+       <div class="container">
+           <div class="title col-xs-4">
+               <input type="text" ng-change="updateDocTitle()" ng-model="docUI.docTitle">
+           </div>
+           <div class="col-xs-8 participant-list">
+                <span ng-repeat="user in docParticipants">
+                    {{user.shortName.subStr(0,1)}}
+                </span>
+           </div>
+       </div>
+    </div>
+    <pz-editor-toolbar styles="selectionStyles" on-select-stype="editStyle(newStyle)" on-add-link="addLink(link)"></pz-editor-toolbar>
+   
+    <div class="main-editor">
+        <div class="col-xs-12">
+            <div class="col-md-2">
+                <h4>Add Participant</h4>
+                <div class="form-group">
+                    <label for="">Name</label>
+                    <input type="text" ng-model="newParticipant.name" class="form-control">
+                    <button class="btn btn-success" ng-click="addParticipant()">Add</button>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div id="pzCanvasContainer" class=""></div>
+            </div>
+            <div class="col-md-3">
+                Online : 
+                <div ng-repeat="par in participantsOnline"> {{par.profile.name}}</div>
+                <hr>
+                Offline : 
+                <div ng-repeat="par in participantsOffline"> {{par.profile.name}}</div>
+            </div>
+        </div>
+    </div>
+</div>

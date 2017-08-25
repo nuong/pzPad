@@ -1,0 +1,24 @@
+<div ng-controller="topEventCtrl" class="home-main-block" ng-cloak>
+    <div class="top-block-all">
+        <div class="icon">
+            <i class="fa fa-star-o"></i>
+        </div>
+        <div class="title">
+            {{title}}
+        </div>
+    </div>
+    <div class="block-body">
+        <div style="height: 305px">
+            <carousel interval="myInterval">
+                <slide ng-repeat="slide in slides" active="slide.active">
+                    <img ng-src="{{slide.image}}" style="margin:auto;">
+                    <div class="carousel-caption">
+                        <h4>Slide {{$index}}</h4>
+                        <p>{{slide.text}}</p>
+                    </div>
+                </slide>
+            </carousel>
+        </div>
+
+    </div>
+</div>

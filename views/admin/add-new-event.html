@@ -1,0 +1,105 @@
+﻿<div class="admin-right-box add-new-event-box" ng-controller="addNewEventCtrl">
+    <div class="row admin-right-box-title">
+        <i class="fa fa-plus orange-color"></i> Tạo chương trình mới
+    </div>
+    <div class="form-group">
+        <label for="exampleInput1">Tên chương trình</label>
+        <input type="text" ng-model="service.event.Title" class="form-control" id="exampleInput1" placeholder="Nhập tên chương trình">
+    </div>
+    <div class="form-group">
+        <label for="exampleInput2">Địa điểm</label>
+        <input type="text" ng-model="service.event.Address" class="form-control" id="exampleInput2" placeholder="Nhập địa điểm">
+    </div>
+    <div class="row input-date-event">
+        <div class="col-md-6">
+            <label for="">Ngày bắt đầu</label>
+            <p class="input-group input-date">
+                <input type="text" ng-model="service.event.StartDate" placeholder="Chọn ngày bắt đầu" class="form-control" datepicker-popup ng-model="startDate" is-open="openedStartDate" min-date="today" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="openStartDate($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                </span>
+            </p>
+        </div>
+
+        <div class="col-md-6">
+            <label for="">Ngày kết thúc</label>
+            <p class="input-group input-date">
+                <input type="text" ng-model="service.event.EndDate" placeholder="Chọn ngày kết thúc" class="form-control" datepicker-popup ng-model="endDate" is-open="openedEndDate" min-date="today" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="openEndDate($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                </span>
+            </p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="exampleInput4">Tổng chi phí dự kiến</label>
+        <input type="number" ng-model="service.event.Amount" class="form-control" id="exampleInput4" placeholder="Nhập chi phí dự kiến dạng số (đơn vị VND) ex : 400.000">
+    </div>
+    <div class="form-group">
+        <label for="exampleInput41">Chi phí tham gia dự kiến</label>
+        <input type="number" ng-model="service.event.FeeJoin" class="form-control" id="exampleInput41" placeholder="Nhập chi phí dự kiến dạng số (đơn vị VND) ex : 400.000">
+    </div>
+    <div class="margin-top10">
+        <label>Upload banner cho chương trình </label>
+        <div lns-upload lns-attachment="eventBanner"></div>
+    </div>
+    <div class="margin-top10">
+        <label>Người tham khảo (danh sách những người có thể liên hệ để xác nhận chương trình) </label>
+        <table ng-if="service.listRef.length > 0" class="table table-striped">
+            <thead>
+                <tr>
+                    <td>STT</td>
+                    <td>Họ Tên</td>
+                    <td>SĐT</td>
+                    <td>Địa Chỉ</td>
+                </tr>
+            </thead>
+            <tbody class="">
+                <tr ng-repeat="ref in service.listRef">
+                    <td>{{$index +1}}</td>
+                    <td>{{ref.Name}}</td>
+                    <td>{{ref.Phone}}</td>
+                    <td>{{ref.Address}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><a href="javascript:void(0);" ng-click="clickAddRef()"><i class="fa fa-plus blue-color"></i> Thêm người tham khảo</a></p>
+        <div class="row" ng-if="showAddRef">
+            <div class="col-md-2"></div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="exampleInput11">Họ Tên</label>
+                    <input ng-model="newRef.Name" type="text" class="form-control" id="exampleInput11" placeholder="Nhập Họ Tên">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInput22">Địa Chỉ</label>
+                    <input ng-model="newRef.Address" type="text" class="form-control" id="exampleInput22" placeholder="Nhập Địa Chỉ">
+                </div> <div class="form-group">
+                    <label for="exampleInput31">Số ĐT </label>
+                    <input ng-model="newRef.Phone" type="number" class="form-control" id="exampleInput31" placeholder="Nhập sdt">
+                </div>
+                <div class="margin-top10 text-right">
+                    <button type="button" class="btn btn-success" ng-click="addRef()">Ok</button>
+                    <button type="button" class="btn btn-primary" ng-click="closeAddRef()">Hủy</button>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+    <div class="margin-top10">
+        <label>Trạng thái chương trình </label>
+        <div>
+            <p> <a class="blue-color" href="javascrip:void(0);" ng-click="changeStatus(1)"><i class="fa fa-{{service.event.Status==1?'check-':''}}square-o"></i> Đã hoàn thành</a></p>
+            <p><a class="blue-color" href="javascrip:void(0);" ng-click="changeStatus(0)"><i class="fa fa-{{service.event.Status==0?'check-':''}}square-o"></i> Chưa thực hiện</a></p>
+        </div>
+    </div>
+    <div>
+            <label>Chi tiet chương trình</label>
+        <div ng-if="options != null" summernote config="options" ng-model="service.event.Description"></div>
+    </div>
+    <div class="margin-top10 text-right">
+        <button type="button" class="btn btn-success" ng-click="submitAddNew()">Submit</button>
+        <button type="button" class="btn btn-primary">Reset</button>
+    </div>
+
+</div>

@@ -1,0 +1,50 @@
+<div class="doc-toolbar">
+   <div class="select-group">
+        <select class="form-control" ng-model="styles.header.value"
+        ng-change="setStyle('header', styles.header.value)" >
+        <option value="">Normal text</option>
+        <option value="h1">Heading 1</option>
+        <option value="h2">Heading 2</option>
+        <option value="h3">Heading 3</option>
+        <option value="h4">Heading 4</option>
+        <option value="h5">Heading 5</option>
+        </select>
+   </div>
+   <div class="devider"></div>
+    <div class="select-group">
+        <select class="form-control" ng-model="styles.fontSize.value"
+        ng-change="setStyle('fontSize', styles.fontSize.value)" >
+        <option value="">14</option>
+        <option ng-repeat="size in fontSizes" value="{{size}}px"> {{::size}}</option>
+        </select>
+   </div>
+   <div class="devider"></div>
+   <div class="select-group font-style-gr">   
+      <button class="btn btn-default" ng-click="toggleStyle('fontWeight', 'fontWeightBold')" ng-class="{active : checkStyle('fontWeight','fontWeightBold')}"> <i class="fa fa-bold" aria-hidden="true"></i> </button> 
+      <button class="btn btn-default" ng-click="toggleStyle('fontStyle', 'fontStyleItalic')" ng-class="{active : checkStyle('fontStyle','fontStyleItalic')}"> <i class="fa fa-italic" aria-hidden="true"></i> </button> 
+      <button class="btn btn-default" ng-click="toggleStyleMultiple('textDecoration', 'textDecorationUnderline')" ng-class="{active : checkStyle('textDecoration','textDecorationUnderline')}"> <i class="fa fa-underline" aria-hidden="true"></i> </button> 
+      <button class="btn btn-default" ng-click="toggleStyleMultiple('textDecoration', 'textDecorationStrike')" ng-class="{active : checkStyle('textDecoration','textDecorationStrike')}"> <i class="fa fa-strikethrough" aria-hidden="true"></i> </button> 
+   </div>
+   <div class="devider"></div>
+   <div class="select-group font-style-gr">   
+      <button class="btn btn-default" ng-click="toggleStyleMultiple('textAlign', 'textAlignLeft')" ng-class="{active : checkStyle('textAlign','textAlignLeft')}"> <i class="fa fa-align-left" aria-hidden="true"></i> </button> 
+      <button class="btn btn-default" ng-click="toggleStyleMultiple('textAlign', 'textAlignCenter')" ng-class="{active : checkStyle('textAlign','textAlignCenter')}"> <i class="fa fa-align-center" aria-hidden="true"></i> </button> 
+      <button class="btn btn-default" ng-click="toggleStyleMultiple('textAlign', 'textAlignRight')" ng-class="{active : checkStyle('textAlign','textAlignRight')}"> <i class="fa fa-align-right" aria-hidden="true"></i> </button> 
+      <button class="btn btn-default" ng-click="toggleStyleMultiple('textAlign', 'textAlignJusity')" ng-class="{active : checkStyle('textAlign','textAlignJusity')}"> <i class="fa fa-align-justify" aria-hidden="true"></i> </button> 
+   </div>
+   <div class="devider"></div>
+   <div class="select-group font-style-gr">
+       <button class="btn btn-default" ng-click="toggleStyleMultiple('list', 'listUnordered')" ng-class="{active : checkStyle('listStyleType','listUnordered')}"> <i class="fa fa-list-ul" aria-hidden="true"></i> </button> 
+       <button class="btn btn-default" ng-click="toggleStyleMultiple('list', 'listDecimal')" ng-class="{active : checkStyle('listStyleType','listDecimal')}"> <i class="fa fa-list-ol" aria-hidden="true"></i> </button> 
+   </div>
+   <div class="devider"></div>
+   <div class="select-group font-style-gr">
+      <button class="btn btn-default" ng-click="setStyle('indent', 'outdent')"> <i class="fa fa-outdent" aria-hidden="true"></i> </button> 
+      <button class="btn btn-default" ng-click="setStyle('indent', 'indent')"> <i class="fa fa-indent" aria-hidden="true"></i> </button> 
+   </div>
+   <div class="devider"></div>
+   <div class="select-group font-style-gr">
+      <button class="btn btn-default" ng-click="setLink()"> <i class="fa fa-link" aria-hidden="true"></i> </button> 
+   </div>
+
+</div>

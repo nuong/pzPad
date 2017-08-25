@@ -1,0 +1,30 @@
+<div class="lns-full-page">
+    <div lns-banner></div>
+    <div class="nav nav-top">
+        <div lns-menu-top></div>
+    </div>
+    <div class="main-page-content row">
+        <div class="row" ng-if="rightContent.length == 0">
+            <div class="col-md-12">
+                <div class="col-md-12"><div ng-repeat="elem in mainContent" bind-compiled-html="elem.name"></div></div>
+            </div>
+        </div>
+        <div class="row" ng-if="rightContent.length > 0 ">
+            <div class="col-md-12">
+                <div class="col-md-8">
+                    <div ng-repeat="elem in mainContent" bind-compiled-html="elem.name">
+
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div ng-repeat="elem in rightContent" bind-compiled-html="elem.name">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div lns-footer ></div>
+    </div>
+</div>

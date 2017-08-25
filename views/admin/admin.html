@@ -1,0 +1,62 @@
+﻿<div class="admin-page">
+    <div class="top-block-all">
+        <div class="title font-bold">
+            Admin Page
+        </div>
+    </div>
+    <div class="block-body">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-3 left-menu-admin padding-left0">
+                    <accordion close-others="oneAtATime">
+                        <accordion-group is-open="status.open1">
+                            <accordion-heading>
+                                <i class="orange-color pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open1, 'glyphicon-chevron-right': !status.open1}"></i>
+                                <span class="orange-color display-table"><i class="fa fa-square icon-list-style"></i> Quản lý users </span>
+                            </accordion-heading>
+                            <ul class="list-group">
+                                <li class="list-group-item"><span class="display-table"><i class="fa fa-circle"></i> <a href="javascript:void(0)" ng-click="changeBox('listUser')">Danh sách Users </a></span></li>
+                            </ul>
+                        </accordion-group>
+                        <accordion-group is-open="status.open2">
+                            <accordion-heading>
+                                <i class="pull-right glyphicon orange-color" ng-class="{'glyphicon-chevron-down': status.open2, 'glyphicon-chevron-right': !status.open2}"></i>
+                                <span class="orange-color display-table"><i class="fa fa-square icon-list-style"></i> Quản lý chương trình</span>
+                            </accordion-heading>
+                            <ul class="list-group">
+                                <li class="list-group-item"><span class="display-table"><i class="fa fa-circle"></i><a href="javascript:void(0)" ng-click="changeBox('listEvent')">Danh sách chương trình</a></span></li>
+                                <li class="list-group-item"><span class="display-table"><i class="fa fa-circle"></i><a href="javascript:void(0)" ng-click="changeBox('addEvent')">Thêm chương trình mới</a></span></li>
+                                <li class="list-group-item"><span class="display-table"><i class="fa fa-circle"></i><a href="javascript:void(0)" ng-click="changeBox('newEvent')">Chương trình chưa hoàn thành</a></span></li>
+                                <li class="list-group-item"><span class="display-table"><i class="fa fa-circle"></i><a href="javascript:void(0)" ng-click="changeBox()"></a></li>
+                            </ul>
+                        </accordion-group>
+                        <accordion-group is-open="status.open3">
+                            <accordion-heading>
+                                <i class="orange-color pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open3, 'glyphicon-chevron-right': !status.open3}"></i>
+                                <span class="display-table"><i class="fa fa-square icon-list-style"></i> quản lý ... </span> 
+                            </accordion-heading>
+                            <ul class="list-group">
+                                <li class="list-group-item">Cras justo odio</li>
+                                <li class="list-group-item">Dapibus ac facilisis in</li>
+                                <li class="list-group-item">Morbi leo risus</li>
+                                <li class="list-group-item">Porta ac consectetur ac</li>
+                                <li class="list-group-item">Vestibulum at eros</li>
+                            </ul>
+                        </accordion-group>
+                    </accordion>
+                </div>
+                <div class="col-md-9" ng-switch="curBox">
+                    <div class="row">
+                        <div ng-switch-when="listUser"><div lns-users-admin></div></div>
+                        <div ng-switch-when="listEvent"><div lns-list-events-admin></div></div>
+                        <div ng-switch-when="addEvent"><div lns-add-new-event></div></div>
+                        <div ng-switch-when="newEvent">New Event</div>
+                        <div ng-switch-default>Admin Page content</div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+       
+    </div>
+</div>
